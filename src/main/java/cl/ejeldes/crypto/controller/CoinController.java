@@ -7,7 +7,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by emilio on Jan 18, 2019
@@ -15,6 +17,7 @@ import java.util.List;
 @Api(tags = "Coins Resource")
 @RestController
 @RequestMapping("/api/coins")
+@CrossOrigin
 public class CoinController {
 
     private CoinService coinService;
@@ -42,4 +45,13 @@ public class CoinController {
     public Coin getCoinById(@PathVariable("id") String id) {
         return coinService.findById(id);
     }
+
+    @GetMapping("/count")
+    public Map<String, Long> getTotalOfCoins() {
+        Map<String, Long> result = new HashMap<>();
+        result.put("size", coinService.count());
+
+        return result;
+    }
+
 }

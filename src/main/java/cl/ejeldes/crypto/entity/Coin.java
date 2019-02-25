@@ -21,7 +21,7 @@ public class Coin {
     private String id;
     private String nombre;
     private String icono;
-    private String precio;
+    private double precio;
     private double score;
     private double profit;
     private int ranking;

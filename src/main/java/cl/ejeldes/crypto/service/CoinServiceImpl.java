@@ -39,4 +39,9 @@ public class CoinServiceImpl implements CoinService {
         Optional<Coin> optional = coinRepository.findById(id);
         return optional.orElseGet(Coin::new);
     }
+
+    @Override
+    public long count() {
+        return coinRepository.count();
+    }
 }

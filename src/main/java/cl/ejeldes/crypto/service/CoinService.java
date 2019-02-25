@@ -14,7 +14,7 @@ public interface CoinService {
     /**
      * This method gets all the coins in a list from the database
      *
-     * @return List of Coins
+     * @return a List of Coins
      */
     List<Coin> findAll();
 
@@ -29,7 +29,7 @@ public interface CoinService {
     /**
      * This method returns a Coin that matches the specific name passed
      *
-     * @param name String
+     * @param name of the coin
      * @return Coin Representation
      */
     Coin findByName(String name);
@@ -37,8 +37,15 @@ public interface CoinService {
     /**
      * This method returns a Coin that matches de id
      *
-     * @param id String
+     * @param id of the coin
      * @return a Coin representation
      */
     Coin findById(String id);
+
+    /**
+     * This method exposes the total of coins in the database
+     *
+     * @return total of coins
+     */
+    long count();
 }
