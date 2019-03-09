@@ -34,7 +34,6 @@ public class SwaggerConfig {
                 .apiInfo(metaData());
     }
 
-
     private ApiInfo metaData() {
         Contact contact = new Contact("Emilio Jeldes", "https://github.com/EmilioJeldes", "emilio.jeldes@gmail.com");
 
